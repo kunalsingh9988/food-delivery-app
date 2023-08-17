@@ -1,0 +1,101 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    background-color: #00302E;
+    padding: 25px 80px;
+}
+.leftHeader{
+   display: flex;
+   gap: 15px;
+}
+.leftHeader h1{
+    color: white;
+    
+}
+.rightHeader ul {
+    display: flex;
+    align-items: center;
+    gap: 55px;
+}
+.rightHeader ul li {
+    list-style-type: none;
+}
+.rightHeader ul li a{
+    text-decoration: none;
+    color: white;
+}
+.rightHeader ul li button {
+    width: 142px;
+    height: 53px;
+    border-radius: 7px;
+    outline: none;
+    border: none;
+    background-color: #FBDDBB;
+    cursor: pointer;
+    color: black;
+    font-size: 17px;
+}
+.rightHeader ul li a span{
+    color: #FBDDBB;
+}
+.appLogo{
+  
+    width: 40px;
+    height: 40px;
+}
+.menu{
+
+    display: none;
+}
+
+
+@media screen and (max-width:500px){
+    .header{
+        padding: 0;
+        
+    }
+    .header2{
+        overflow: hidden;
+   
+    }
+    .leftHeader{
+        margin-left: 20px;
+        transition: .5s ease-in-out;
+    }
+     .rightHeader{
+        /* display: none; */
+        /* object-fit: cover; */
+        padding: 80px 0 30px 0;
+        overflow: hidden;
+        width: 150px;
+        margin-top: 300px;
+        background-color:#00302E;
+  
+     }
+     .rightHeader2{
+        transform: translateX(190px);
+   
+     }
+     .rightHeader ul{
+        flex-direction: column;
+     }
+     .menu{
+        display: flex;
+        position: absolute;
+        top: 30px;
+        left: 330px;
+     }
+     .menuBar{
+        color: white;
+        height: 40px;
+        width: 40px;
+        display: flex;
+     }
+     .rightHeader ul li button{
+        width: 80px;
+        height: 40px;
+        font-size: 15px;
+     }
+}
