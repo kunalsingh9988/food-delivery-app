@@ -149,7 +149,7 @@ export const FoodData = [
         imageUrl:"https://images.pexels.com/photos/2714722/pexels-photo-2714722.jpeg?auto=compress&cs=tinysrgb&w=600",
         description:"Kunal's Special Pizza is a culinary masterpiece that delights the senses with a symphony of flavors. A thin, crispy crust provides the perfect foundation for this gastronomic creation. Generously topped with succulent grilled chicken, caramelized onions, and a medley of vibrant bell peppers, every bite offers a harmonious blend of textures and tastes.But that's not all – the pizza is elevated by a drizzle of aromatic truffle oil, infusing each slice with a luxurious earthy essence. Velvety mozzarella cheese blankets the toppings, melting into a creamy, gooey perfection that pulls together the diverse flavors into a delicious whole.Kunal's Special Pizza is a culinary journey that captivates the palate and showcases the artistry of combining high-quality ingredients into a true masterpiece of taste and texture.",
         category:"pizza",
-        price:0,
+        price:1299,
         isSpecial:true
     },
     {

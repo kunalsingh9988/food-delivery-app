@@ -1,20 +1,28 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./Products.css";
 import { AiFillHome } from "react-icons/ai";
 import { BsFillPersonFill, BsFillCartFill } from "react-icons/bs";
 import { HiTemplate } from "react-icons/hi";
 import { FoodData } from "../../FoodData";
-import { MdKeyboardDoubleArrowLeft,MdKeyboardDoubleArrowRight } from "react-icons/md";
+import {
+  MdKeyboardDoubleArrowLeft,
+  MdKeyboardDoubleArrowRight,
+} from "react-icons/md";
 import { Link } from "react-router-dom";
 // import { Link } from "react-router-dom";
 const Products = () => {
-
- const[side, setSide] = useState(false)
+  const [side, setSide] = useState(false);
 
   return (
     <div id="products">
       <div className="productsContainer">
-        <div className={side?"leftProductContainer productLeftActive":"leftProductContainer"}>
+        <div
+          className={
+            side
+              ? "leftProductContainer productLeftActive"
+              : "leftProductContainer"
+          }
+        >
           <div className="liliesSvg">
             <svg
               className="dashLogo"
@@ -31,15 +39,19 @@ const Products = () => {
                 fill="#E5E5E5"
               />
             </svg>
-            <Link to="/"> 
-            <h1>Lilies</h1>
+            <Link to="/">
+              <h1>Lilies</h1>
             </Link>
-            <button className="sideArrow" onClick={()=> setSide(!side)}>
-                {
-                    side ?<MdKeyboardDoubleArrowRight className="sideArrowIcon" />:<MdKeyboardDoubleArrowLeft className="sideArrowIcon" />
-                }
-              
-              
+            <button
+              title="sidebar"
+              className="sideArrow"
+              onClick={() => setSide(!side)}
+            >
+              {side ? (
+                <MdKeyboardDoubleArrowRight className="sideArrowIcon" />
+              ) : (
+                <MdKeyboardDoubleArrowLeft className="sideArrowIcon" />
+              )}
             </button>
           </div>
           <div className="dashboardItems">
@@ -59,7 +71,13 @@ const Products = () => {
             </h2>
           </div>
         </div>
-        <div className={side ? "rightProductContainer rightProductActive":"rightProductContainer"}>
+        <div
+          className={
+            side
+              ? "rightProductContainer rightProductActive"
+              : "rightProductContainer"
+          }
+        >
           <div className="productTitle">
             <h1>Good Morning, [Account name]</h1>
             <p>What delicious meal are you craving today?</p>
@@ -74,7 +92,9 @@ const Products = () => {
                   <p className="productDes">{description.slice(0, 45)}...</p>
                   <div className="priceAndButton">
                     <p>${price}</p>
-                    <button className="addToCart">Add to Cart</button>
+                    <Link to={`/singleproduct/${id}`}>
+                      <button className="addToCart">Add to Cart</button>
+                    </Link>
                   </div>
                 </div>
               );

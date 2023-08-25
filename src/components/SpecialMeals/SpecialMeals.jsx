@@ -4,7 +4,7 @@ import { FoodData } from "../../FoodData";
 import { Link } from "react-router-dom";
 const SpecialMeals = () => {
 
-  console.log(FoodData);
+
   return (
     <div id="specialMeals">
       <div className="firstMeal">
@@ -17,18 +17,21 @@ const SpecialMeals = () => {
       <div className="secondMeal">
         {FoodData.map((data) => {
           if (data.isSpecial) {
+          
             return (
               <div className="specialMealContainer" key={data.id}>
                 <img className="specialImg" src={data.imageUrl} alt={data.name} />
                 <b>{data.name}</b>
                 <p>{data.description.slice(0,50)}...</p>
-                <Link to="/">
+                <Link to={`/singleproduct/${data.id}`}>
                 <button>Read More!</button>
                 </Link>
               </div>
-            );
+            )
           }
-        })}
+          return <div key={data.id}></div>
+        }
+        )}
       </div>
     </div>
   );
