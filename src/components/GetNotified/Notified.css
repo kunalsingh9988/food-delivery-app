@@ -1,0 +1,76 @@
+#getNotified{
+    padding: 100px 0;
+    background-color: #00302E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.notifiedContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80vw;
+}
+.leftNotified{
+    width: 40vw;
+}
+.leftNotified h2{
+    color: #FBDDBB;
+    font-size: 33px;
+}
+.leftNotified p {
+    margin-top: 20px;
+    line-height: 1.5;
+    color: rgb(183, 183, 183);
+}
+.emailNotified{
+    width: 250px;
+    height: 52px;
+    border-radius: 5px;
+    padding: 10px 40px;
+    border: none;
+    outline: none;
+    color: gray;
+
+}
+.submitNotified{
+    margin-left: 20px;
+    padding-left:20px ;
+  
+    margin-top: 30px;
+    width: 142px;
+    height: 53px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: #FBDDBB;
+    cursor: pointer;
+    color: red;
+    font-size: 17px;
+}
+.submitNotified::placeholder{
+    color: black;
+    font-weight: 600;
+}
+
+@media  screen and (max-width:500px) {
+     #getNotified{
+        padding: 0 0 30px 0;
+     }
+    .notifiedContainer{
+        width: 90vw;
+        flex-direction: column;
+    }
+    .leftNotified{
+        text-align: center;
+        width: 90vw;
+    }
+    .emailNotified{
+        width: 170px;
+    }
+    .submitNotified{
+        width: 120px;
+        padding-left: 10px;
+        margin-left: 5px;
+    }
+}

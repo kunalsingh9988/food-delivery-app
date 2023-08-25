@@ -4,7 +4,7 @@
     align-items: center;
     height: 100px;
     background-color: #00302E;
-    padding: 25px 80px;
+    padding: 20px 80px;
 }
 .leftHeader{
    display: flex;
@@ -27,12 +27,12 @@
     color: white;
 }
 .rightHeader ul li button {
-    width: 142px;
-    height: 53px;
+    width: 100px;
+    height: 40px;
     border-radius: 7px;
     outline: none;
     border: none;
-    background-color: #FBDDBB;
+    background-color: #E2B887;
     cursor: pointer;
     color: black;
     font-size: 17px;
@@ -65,26 +65,28 @@
         transition: .5s ease-in-out;
     }
      .rightHeader{
-        /* display: none; */
-        /* object-fit: cover; */
-        padding: 80px 0 30px 0;
+        padding: 80px 0 30px 30px;
         overflow: hidden;
-        width: 150px;
-        margin-top: 300px;
-        background-color:#00302E;
-  
+        width: 200px;
+        margin-top: 200px;
+        background-color:#00514f;
+   
+        
+        z-index: 1;
      }
      .rightHeader2{
-        transform: translateX(190px);
+        transform: translateX(200px);
    
      }
      .rightHeader ul{
         flex-direction: column;
+        align-items: flex-start;
      }
      .menu{
         display: flex;
         position: absolute;
         top: 30px;
+        z-index: 2;
         left: 330px;
      }
      .menuBar{

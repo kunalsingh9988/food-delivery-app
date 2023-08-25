@@ -36,7 +36,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <a href="">Login</a>
+              <a href="/">Login</a>
             </li>
             <li>
               <button>Sign Up</button>
