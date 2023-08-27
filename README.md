@@ -68,3 +68,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### This app is replicated through this figma design :- 
+https://www.figma.com/file/AE59TQZeTPipqonOQ5rvs9/Lilies-Food-Place-(Community)?type=design&node-id=56-529&mode=design&t=wBT8kdeuopyF1S6d-0
+Feel free to change the design to something good although the purpose of this website is great functionality.
