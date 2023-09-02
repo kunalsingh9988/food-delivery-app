@@ -4,15 +4,13 @@ import { AiFillHome } from "react-icons/ai";
 import { BsFillPersonFill, BsFillCartFill } from "react-icons/bs";
 import { HiTemplate } from "react-icons/hi";
 import { FoodData } from "../../FoodData";
-import {
-  MdKeyboardDoubleArrowLeft,
-  MdKeyboardDoubleArrowRight,
-} from "react-icons/md";
+import {MdKeyboardDoubleArrowLeft,MdKeyboardDoubleArrowRight} from "react-icons/md";
 import { Link } from "react-router-dom";
-// import { Link } from "react-router-dom";
+import {  useSelector } from "react-redux";
+
 const Products = () => {
   const [side, setSide] = useState(false);
-
+  const orders = useSelector(state=>state.cart)
   return (
     <div id="products">
       <div className="productsContainer">
@@ -63,7 +61,7 @@ const Products = () => {
             </h2>
             <h2>
               <HiTemplate className="productIcon " /> Orders
-              <div className="hsp hspFirst">0</div>
+              <div className="hsp hspFirst">{orders.length}</div>
             </h2>
             <h2>
               <BsFillCartFill className="productIcon " /> Your Cart
@@ -93,7 +91,7 @@ const Products = () => {
                   <div className="priceAndButton">
                     <p>${price}</p>
                     <Link to={`/singleproduct/${id}`}>
-                      <button className="addToCart">Add to Cart</button>
+                      <button className="addToCart">Order Now</button>
                     </Link>
                   </div>
                 </div>
