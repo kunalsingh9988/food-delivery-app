@@ -1,12 +1,21 @@
-import React from "react";
+//Cart.jsx
+import React, { useEffect } from "react";
 import "./Cart.css";
 import { MdClose } from "react-icons/md";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { removeItem, totalItem } from "../../redux/cartSlice";
 
 const Cart = ({ cart, setCart }) => {
-  const cartProducts = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  const cartProducts = useSelector((state) => state.cart.singleCart);
+  const totalCartPrice = useSelector((state) => state.cart.totalPrice); // New selector
 
-  console.log(cartProducts);
+  const removeToCart = (id) => {
+    dispatch(removeItem(id));
+  };
+  useEffect(() => {
+    dispatch(totalItem());
+  }, [cartProducts, dispatch]);
 
   return (
     <div className={cart ? "cart" : "cartActive"}>
@@ -24,7 +33,9 @@ const Cart = ({ cart, setCart }) => {
             <p>Sub-total</p>
           </div>
         </div>
-        {cartProducts.length === 0 && <h4 className="emptyAlert">Your Cart is Empty!</h4>}
+        {cartProducts.length === 0 && (
+          <h4 className="emptyAlert">Your Cart is Empty!</h4>
+        )}
         {cartProducts.map((product) => {
           return (
             <div className="singleCartProduct" key={product.id}>
@@ -32,18 +43,29 @@ const Cart = ({ cart, setCart }) => {
                 <img src={product.imageUrl} alt="" />
                 <div className="itemName">
                   <p>{product.name}</p>
-                  <button>Remove</button>
+                  <button onClick={() => removeToCart(product.id)}>
+                    Remove
+                  </button>
                 </div>
               </div>
               <div className="rightCartItem">
-                <p>0</p>
+                <p>{product.quantity}</p>
+
                 <p>${product.price}</p>
-                <p>${product.price}</p>
+                <p>${product.quantity * product.price}</p>
               </div>
             </div>
           );
         })}
       </div>
+      {cartProducts.length > 0 && (
+        <div className="checkout">
+          <p>
+            total :<b> ${totalCartPrice.toFixed(2)}</b>{" "}
+          </p>
+          <button className="checkoutBtn">Checkout</button>
+        </div>
+      )}
     </div>
   );
 };
