@@ -7,12 +7,24 @@ import { HiTemplate } from "react-icons/hi";
 import {MdKeyboardDoubleArrowLeft,MdKeyboardDoubleArrowRight} from "react-icons/md";
 import { Link } from "react-router-dom";
 import {  useSelector } from "react-redux";
+import MainProduct from "./MainProduct";
 
 
 const Products = () => {
   const [side, setSide] = useState(false);
   const orders = useSelector(state=>state.cart.items)
-  const order = useSelector(state=>state.cart.singleCart)
+  const [items, setItems] = useState(orders)
+
+  const allCategories =['all',...new Set(orders.map((order) => order.category))]
+
+  const filterItems = (category) => {
+    if (category === 'all') {
+      setItems(orders);
+    } else {
+      const newItems = orders.filter((item) => item.category === category);
+      setItems(newItems);
+    }
+  };
  
   return (
     <div id="products">
@@ -64,7 +76,7 @@ const Products = () => {
             </h2>
             <h2>
               <HiTemplate className="productIcon " /> Orders
-              <div className="hsp hspFirst">{order.length}</div>
+              <div className="hsp hspFirst">0</div>
             </h2>
             <h2>
               <BsFillCartFill className="productIcon " /> Your Cart
@@ -72,36 +84,12 @@ const Products = () => {
             </h2>
           </div>
         </div>
-        <div
-          className={
-            side
-              ? "rightProductContainer rightProductActive"
-              : "rightProductContainer"
-          }
-        >
-          <div className="productTitle">
-            <h1>Good Morning, [Account name]</h1>
-            <p>What delicious meal are you craving today?</p>
-          </div>
-          <div className="productItems">
-            {orders.map((data) => {
-              const { id, name, imageUrl, description, price } = data;
-              return (
-                <div className="productItem" key={id}>
-                  <img className="productImg" src={imageUrl} alt={name} />
-                  <h3>{name}</h3>
-                  <p className="productDes">{description.slice(0, 45)}...</p>
-                  <div className="priceAndButton">
-                    <p>${price}</p>
-                    <Link to={`/singleproduct/${id}`}>
-                      <button className="addToCart">Order Now</button>
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+         <MainProduct 
+         side={side}
+         filterItems={filterItems}
+         allCategories={allCategories}
+         items={items}
+         />
       </div>
     </div>
   );
