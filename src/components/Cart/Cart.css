@@ -77,6 +77,12 @@
   flex-direction: column;
   align-items: center;
 }
+.checkout p{
+  font-size: 20px;
+}
+.checkout p b{
+  color: #06e775;
+}
 .checkoutBtn{
   cursor: pointer;
   border: none;

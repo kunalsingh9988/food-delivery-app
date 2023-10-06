@@ -1,0 +1,79 @@
+#login {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+ align-items: center;
+}
+.loginContainer input {
+  font-size: 15px;
+  padding: 5%;
+  width: 488px;
+  height: 71px;
+  margin-top: 25px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid lightgray;
+}
+.loginContainer input::placeholder {
+  color: lightgray;
+}
+
+.loginBtn {
+  margin-top: 25px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #00302e;
+  border-radius: 5px;
+  color: #f3c294;
+  width: 200px;
+  height: 60px;
+  font-size: 15px;
+}
+.loginContainer b{
+    
+    margin-top: 30px;
+}
+.googleIcon{
+    font-size: 30px;
+    color: #4285F4;
+}
+.googleBtn {
+    color: black;
+  margin-top: 25px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 2px 2px 15px rgb(195, 195, 195);
+  width: 500px;
+  height: 60px;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 500px) {
+  #login {
+    text-align: center;
+  }
+  .loginContainer input {
+    width: 280px;
+    height: 61px;
+  }
+  .loginBtn {
+    width: 180px;
+  }
+  .googleBtn{
+    font-size: 15px;
+    width: 270px;
+  }
+}

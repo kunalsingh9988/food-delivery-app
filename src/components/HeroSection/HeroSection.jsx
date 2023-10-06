@@ -1,6 +1,7 @@
 import React from "react";
 import "./HeroSection.css";
 import { Link } from "react-router-dom";
+
 const HeroSection = () => {
   return (
     <div id="heroSection">

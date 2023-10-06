@@ -6,6 +6,7 @@ import { BsArrowLeft, BsFillCartFill } from "react-icons/bs";
 import Cart from "../../components/Cart/Cart";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, incrementItem, decrementItem } from "../../redux/cartSlice";
+import { ToastContainer } from "react-toastify";
 
 const SingleProduct = () => {
   const dispatch = useDispatch();
@@ -51,6 +52,9 @@ const SingleProduct = () => {
         </button>
       </Link>
       <button className="cartBtn" onClick={() => setCart(!cart)}>
+        <div className="cartIconValue">
+          {quantity}
+        </div>
         <BsFillCartFill className="cartIcon" />
       </button>
       <div className={cart ? "singlePageContainer singleBg" : "singlePageContainer "}>
@@ -75,6 +79,7 @@ const SingleProduct = () => {
           Add to Cart
         </button>
       </div>
+      <ToastContainer/>
       <Cart cart={cart} setCart={setCart}/>
     </div>
   );

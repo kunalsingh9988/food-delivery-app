@@ -27,8 +27,8 @@
     color: white;
 }
 .rightHeader ul li button {
-    width: 100px;
-    height: 40px;
+    padding: 10px 20px;
+
     border-radius: 7px;
     outline: none;
     border: none;
@@ -39,6 +39,16 @@
 }
 .rightHeader ul li a span{
     color: #FBDDBB;
+}
+.userHeaderDetails{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.userHeaderDetails a img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 .appLogo{
   
@@ -68,7 +78,7 @@
         padding: 80px 0 30px 30px;
         overflow: hidden;
         width: 200px;
-        margin-top: 200px;
+        margin-top: 120px;
         background-color:#00514f;
    
         
@@ -96,8 +106,6 @@
         display: flex;
      }
      .rightHeader ul li button{
-        width: 80px;
-        height: 40px;
-        font-size: 15px;
+        font-size: 12px;
      }
 }

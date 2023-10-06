@@ -4,28 +4,41 @@ import "./Products.css";
 import { AiFillHome } from "react-icons/ai";
 import { BsFillPersonFill, BsFillCartFill } from "react-icons/bs";
 import { HiTemplate } from "react-icons/hi";
-import {MdKeyboardDoubleArrowLeft,MdKeyboardDoubleArrowRight} from "react-icons/md";
+import {
+  MdKeyboardDoubleArrowLeft,
+  MdKeyboardDoubleArrowRight,
+} from "react-icons/md";
 import { Link } from "react-router-dom";
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import MainProduct from "./MainProduct";
-
 
 const Products = () => {
   const [side, setSide] = useState(false);
-  const orders = useSelector(state=>state.cart.items)
-  const [items, setItems] = useState(orders)
+  const orders = useSelector((state) => state.cart.items);
+  const [items, setItems] = useState(orders);
 
-  const allCategories =['all',...new Set(orders.map((order) => order.category))]
+  const allCategories = [
+    "all",
+    ...new Set(orders.map((order) => order.category)),
+  ];
+
+  const searchItems = (event) => {
+    const searchQuery = event.target.value.toLowerCase();
+    const newSearchedItems = orders.filter((searchItem) =>
+      searchItem.name.toLowerCase().includes(searchQuery)
+    );
+    setItems(newSearchedItems);
+  };
 
   const filterItems = (category) => {
-    if (category === 'all') {
+    if (category === "all") {
       setItems(orders);
     } else {
       const newItems = orders.filter((item) => item.category === category);
       setItems(newItems);
     }
   };
- 
+
   return (
     <div id="products">
       <div className="productsContainer">
@@ -76,20 +89,37 @@ const Products = () => {
             </h2>
             <h2>
               <HiTemplate className="productIcon " /> Orders
-              <div className="hsp hspFirst">0</div>
+              {/* <div className="hsp hspFirst">0</div> */}
             </h2>
             <h2>
               <BsFillCartFill className="productIcon " /> Your Cart
-              <div className="hsp">0</div>
+              {/* <div className="hsp">0</div> */}
             </h2>
+       
+            <div className="leftProductCategoryButtons">
+            <h2 className="filterTitle">Filter by Category</h2>
+              {allCategories.map((btn, index) => {
+                return (
+                  <button
+                    type="button"
+                    className="leftCategoryBtn"
+                    key={index}
+                    onClick={() => filterItems(btn)}
+                  >
+                    {btn}
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
-         <MainProduct 
-         side={side}
-         filterItems={filterItems}
-         allCategories={allCategories}
-         items={items}
-         />
+        <MainProduct
+          side={side}
+          filterItems={filterItems}
+          allCategories={allCategories}
+          items={items}
+          searchItems={searchItems}
+        />
       </div>
     </div>
   );

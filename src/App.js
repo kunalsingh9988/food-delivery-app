@@ -5,6 +5,9 @@ import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Products from "./pages/Products/Products";
 import SingleProduct from "./pages/SingleProduct/SingleProduct";
+import Login from "./pages/Login/Login";
+
+
 
 const App = () => {
   const router = createBrowserRouter([
@@ -15,6 +18,10 @@ const App = () => {
     {
       path: "/about",
       element: <About />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
     },
     {
       path: "/contact",
@@ -36,7 +43,9 @@ const App = () => {
 
   return (
     <div className="app">
+    
       <RouterProvider router={router} />
+
     </div>
   );
 };
