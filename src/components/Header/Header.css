@@ -10,6 +10,9 @@
    display: flex;
    gap: 15px;
 }
+.leftHeader a{
+    text-decoration: none;
+}
 .leftHeader h1{
     color: white;
     

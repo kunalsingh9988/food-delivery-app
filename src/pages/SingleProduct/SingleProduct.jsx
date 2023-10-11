@@ -76,7 +76,9 @@ const SingleProduct = () => {
           </button>
         </div>
         <button className="singleCartButton" onClick={() => addToCart(selectedItem)}>
-          Add to Cart
+
+          Checkout
+
         </button>
       </div>
       <ToastContainer/>

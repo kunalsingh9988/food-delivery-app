@@ -150,6 +150,7 @@
   color: gray;
 }
 .productImg {
+  object-fit: cover;
   width: 150px;
   height: 150px;
   border-radius: 50%;

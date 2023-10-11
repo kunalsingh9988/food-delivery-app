@@ -6,6 +6,10 @@ import Contact from "./pages/Contact/Contact";
 import Products from "./pages/Products/Products";
 import SingleProduct from "./pages/SingleProduct/SingleProduct";
 import Login from "./pages/Login/Login";
+import Success from "./pages/Success/Success";
+import Profile from "./pages/Profile/Profile";
+import Orders from "./pages/Orders/Orders";
+
 
 
 
@@ -32,9 +36,23 @@ const App = () => {
       element:<Products/>
     },
     {
+      path:'/singleproduct/:id/success',
+      element:<Success/>
+    },
+    {
+      path:'/profile',
+      element:<Profile/>
+    },
+    {
+      path:'/products/orders',
+      element:<Orders/>
+    },
+  
+    {
       path:'/singleproduct/:id',
       element:<SingleProduct/>
     },
+
     {
       path: "*",
       element: <h1 style={{ color: "red" }}>404.This Page was not found</h1>,

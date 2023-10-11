@@ -4,7 +4,9 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
   onAuthStateChanged,
+
 } from "firebase/auth";
+
 import { AiOutlineGoogle } from "react-icons/ai";
 import { auth, provider } from "../../firebase_config";
 import { signInWithPopup } from "firebase/auth";
@@ -39,26 +41,30 @@ const Login = () => {
     setUser(currentUser);
   });
 
+
+
   const signInWithGoogle = async () => {
-    const result = await signInWithPopup(auth, provider);
-      // Check if the pop-up was closed before accessing it
-      if (!result || !result.user) {
-        console.error("Google sign-in pop-up was closed or failed.");
-        return;
-      }
-    navigate("/");
-    toast.success("successfully signup", {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
-    console.log(result);
-  };
+  const result = await signInWithPopup(auth, provider);
+
+  // Check if the sign-in was successful
+  if (!result || !result.user) {
+    console.error("Google sign-in failed.");
+    return;
+  }
+
+  // Navigate to the home page and display the toast message
+  navigate("/");
+  toast.success("successfully signup", {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
+};
 
   
   // Use useEffect to set the user state based on authentication changes
@@ -105,7 +111,6 @@ const Login = () => {
           Submit
         </button>
       </div>
-      <p>{user?.displayName}</p>
     </div>
   );
 };

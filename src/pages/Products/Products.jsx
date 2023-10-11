@@ -8,11 +8,14 @@ import {
   MdKeyboardDoubleArrowLeft,
   MdKeyboardDoubleArrowRight,
 } from "react-icons/md";
+import { auth } from "../../firebase_config";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import MainProduct from "./MainProduct";
 
 const Products = () => {
+  const [user] = useAuthState(auth);
   const [side, setSide] = useState(false);
   const orders = useSelector((state) => state.cart.items);
   const [items, setItems] = useState(orders);
@@ -85,15 +88,21 @@ const Products = () => {
               <AiFillHome className="productIcon active" /> All Products
             </h2>
             <h2>
+              <Link to={user ? "/profile" : "/login"}>
               <BsFillPersonFill className="productIcon " /> Your Profile
+              </Link>
             </h2>
             <h2>
+              <Link to={user ? "/products/orders" : "/login"}>
               <HiTemplate className="productIcon " /> Orders
-              {/* <div className="hsp hspFirst">0</div> */}
+              </Link>
+
             </h2>
             <h2>
+              <Link to={user ? "/products/orders" : "/login"}>
               <BsFillCartFill className="productIcon " /> Your Cart
-              {/* <div className="hsp">0</div> */}
+              </Link>
+
             </h2>
        
             <div className="leftProductCategoryButtons">

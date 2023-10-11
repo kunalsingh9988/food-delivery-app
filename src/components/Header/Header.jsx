@@ -30,8 +30,11 @@ const Header = () => {
   return (
     <>
       <div id="headerContainer">
+
         <div className={isBarOpen ? "header" : "header header2"}>
           <div className="leftHeader">
+         
+     
             <svg
               className="appLogo"
               viewBox="0 0 58 67"
@@ -47,7 +50,9 @@ const Header = () => {
                 fill="#E5E5E5"
               />
             </svg>
+            <Link to="/">
             <h1>Lilies</h1>
+            </Link>
           </div>
           <div
             className={isBarOpen ? "rightHeader" : "rightHeader rightHeader2"}
@@ -65,7 +70,7 @@ const Header = () => {
                   </li>
                   <li>
                     <div className="userHeaderDetails">
-                      <Link to="/products">
+                      <Link to="/profile">
                         <img src={user?.photoURL} alt="" />
                       </Link>
                     </div>

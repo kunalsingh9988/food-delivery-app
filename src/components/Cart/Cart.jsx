@@ -1,18 +1,41 @@
 //Cart.jsx
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./Cart.css";
 import { MdClose } from "react-icons/md";
 import { useSelector, useDispatch } from "react-redux";
 import { removeItem, totalItem } from "../../redux/cartSlice";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../../firebase_config";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { addToOrder } from "../../redux/cartSlice";
 
 const Cart = ({ cart, setCart }) => {
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const cartProducts = useSelector((state) => state.cart.singleCart);
-  const totalCartPrice = useSelector((state) => state.cart.totalPrice); // New selector
+  const totalCartPrice = useSelector((state) => state.cart.totalPrice);
+  const [isLoading, setIsLoading] = useState(false);
 
   const removeToCart = (id) => {
     dispatch(removeItem(id));
   };
+
+  const redirectToHome = () => {
+
+    dispatch(addToOrder(cartProducts))
+    console.log(cartProducts)
+
+    setIsLoading(true);
+    setTimeout(() => {
+      if (user) {
+        navigate("/products/orders");
+      } else {
+        navigate("/login");
+      }
+    }, 3000);
+  };
+
   useEffect(() => {
     dispatch(totalItem());
   }, [cartProducts, dispatch]);
@@ -63,7 +86,9 @@ const Cart = ({ cart, setCart }) => {
           <p>
             total :<b> ${totalCartPrice.toFixed(2)}</b>{" "}
           </p>
-          <button className="checkoutBtn">Checkout</button>
+          <button className="checkoutBtn" onClick={redirectToHome}>
+            {isLoading ? "loading..." : "Order Now"}
+          </button>
         </div>
       )}
     </div>

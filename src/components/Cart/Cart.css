@@ -70,35 +70,35 @@
   margin-top: 20px;
   color: #c92c33;
 }
-.checkout{
+.checkout {
   padding: 5% 0;
   gap: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.checkout p{
+.checkout p {
   font-size: 20px;
 }
-.checkout p b{
+.checkout p b {
   color: #06e775;
 }
-.checkoutBtn{
+.checkoutBtn {
   cursor: pointer;
   border: none;
   outline: none;
-  background-color: #00302E;
-  color: #F3C294;
-    width: 60%;
-    height: 60px;
-    font-size: 15px;
-    transition: .3s ease-in-out;
+  background-color: #00302e;
+  color: #f3c294;
+  width: 60%;
+  height: 60px;
+  font-size: 15px;
+  transition: 0.3s ease-in-out;
 }
-.checkoutBtn:hover{
+.checkoutBtn:hover {
   transform: scale(0.9);
-  transition: .3s ease-in-out;
-
+  transition: 0.3s ease-in-out;
 }
+
 
 @media screen and (max-width: 500px) {
   .cart {

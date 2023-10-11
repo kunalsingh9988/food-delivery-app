@@ -64,6 +64,7 @@
     font-size: 17px;
 }
 .specialImg{
+    object-fit: cover;
     display: block;
     height: 250px;
     border-radius: 50%;
