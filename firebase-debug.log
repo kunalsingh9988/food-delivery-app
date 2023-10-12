@@ -1,14 +1,13 @@
-[debug] [2023-10-11T13:19:35.521Z] ----------------------------------------------------------------------
-[debug] [2023-10-11T13:19:35.525Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\max42\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
-[debug] [2023-10-11T13:19:35.529Z] CLI Version:   12.6.2
-[debug] [2023-10-11T13:19:35.533Z] Platform:      win32
-[debug] [2023-10-11T13:19:35.533Z] Node Version:  v18.18.0
-[debug] [2023-10-11T13:19:35.535Z] Time:          Wed Oct 11 2023 18:49:35 GMT+0530 (India Standard Time)
-[debug] [2023-10-11T13:19:35.535Z] ----------------------------------------------------------------------
+[debug] [2023-10-11T14:07:08.150Z] ----------------------------------------------------------------------
+[debug] [2023-10-11T14:07:08.154Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\max42\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-10-11T14:07:08.154Z] CLI Version:   12.6.2
+[debug] [2023-10-11T14:07:08.155Z] Platform:      win32
+[debug] [2023-10-11T14:07:08.155Z] Node Version:  v18.18.0
+[debug] [2023-10-11T14:07:08.156Z] Time:          Wed Oct 11 2023 19:37:08 GMT+0530 (India Standard Time)
+[debug] [2023-10-11T14:07:08.156Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2023-10-11T13:19:35.549Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
-[debug] [2023-10-11T13:19:35.653Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2023-10-11T13:19:35.653Z] > authorizing via signed-in user (chaud14322@gmail.com)
+[debug] [2023-10-11T14:07:08.263Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-10-11T14:07:08.265Z] > authorizing via signed-in user (kusing51@gmail.com)
 [info] 
      ######## #### ########  ######## ########     ###     ######  ########
      ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
@@ -20,28 +19,7 @@ You're about to initialize a Firebase project in this directory:
 
   K:\React_2023\MY_MAJOR_PROJECTS\food_delivery_app
 
-[debug] [2023-10-11T13:19:36.507Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
-[debug] [2023-10-11T13:19:36.508Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
-[info] 
-=== Project Setup
-[info] 
-[info] First, let's associate this project directory with a Firebase project.
-[info] You can create multiple project aliases by running firebase use --add, 
-[info] but for now we'll just set up a default project.
-[info] 
-[debug] [2023-10-11T13:20:12.550Z] > refreshing access token with scopes: []
-[debug] [2023-10-11T13:20:12.552Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
-[debug] [2023-10-11T13:20:12.552Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
-[debug] [2023-10-11T13:20:13.595Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
-[debug] [2023-10-11T13:20:13.595Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
-[debug] [2023-10-11T13:20:13.615Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
-[debug] [2023-10-11T13:20:14.907Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
-[debug] [2023-10-11T13:20:14.908Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
-[info] i  Using project lilies-food-delivery-app (lilies-food-delivery-app) 
-[info] 
-=== Hosting Setup
-[info] 
-[info] Your public directory is the folder (relative to your project directory) that
-[info] will contain Hosting assets to be uploaded with firebase deploy. If you
-[info] have a build process for your assets, use your build's output directory.
-[info] 
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
